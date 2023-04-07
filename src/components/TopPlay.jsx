@@ -9,6 +9,8 @@ import { playPause, setActiveSong } from "../redux/features/playerSlice";
 import "swiper/css";
 import "swiper/css/free-mode";
 import PlayPause from "./PlayPause";
+import DetailsHeader from "./DetailsHeader";
+import SongDetails from "../pages/SongDetails";
 
 const TopChartCard = ({
   song,
@@ -124,6 +126,13 @@ const TopPlay = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      <div>
+        <DetailsHeader />
+      </div>
+      <div>
+        <SongDetails />
+      </div>
     </div>
   );
 };
