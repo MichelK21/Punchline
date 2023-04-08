@@ -11,6 +11,8 @@ import "swiper/css/free-mode";
 import PlayPause from "./PlayPause";
 import DetailsHeader from "./DetailsHeader";
 import SongDetails from "../pages/SongDetails";
+import RelatedSongs from "./RelatedSongs";
+import { ArtistDetails, TopArtists } from "../pages";
 
 const TopChartCard = ({
   song,
@@ -126,13 +128,14 @@ const TopPlay = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-
-      <div>
+      {/* <div>
         <DetailsHeader />
-      </div>
-      <div>
-        <SongDetails />
-      </div>
+      </div> */}
+      {/* <div>
+        <RelatedSongs />
+      </div> */}
+      <TopArtists />
+      <div>{/* <ArtistDetails /> */}</div>
     </div>
   );
 };
