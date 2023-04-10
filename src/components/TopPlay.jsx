@@ -118,24 +118,24 @@ const TopPlay = () => {
             style={{ width: "25%", height: "auto" }}
             className="shadow-lg rounded-full animate-slideright"
           >
-            <Link to={`/artists/${song?.artists[0].adamid}`}>
+            {/* <Link to={`/artists/${song?.artists[0].adamid}`}>
               <img
                 src={song?.images.background}
                 alt="name"
                 className="rounded-full w-full object-cover"
               />
-            </Link>
+            </Link> */}
           </SwiperSlide>
         ))}
       </Swiper>
-      {/* <div>
-        <DetailsHeader />
-      </div> */}
+      <div>{/* <DetailsHeader /> */}</div>
       {/* <div>
         <RelatedSongs />
       </div> */}
       <TopArtists />
-      <div>{/* <ArtistDetails /> */}</div>
+      <div>
+        <ArtistDetails />
+      </div>
     </div>
   );
 };

@@ -5,6 +5,7 @@ import { playPause, setActiveSong } from "../redux/features/playerSlice";
 import {
   useGetSongDetailsQuery,
   useGetSongRelatedQuery,
+  useGetArtistDetailsQuery,
 } from "../redux/services/shazamCore";
 
 const SongDetails = () => {
@@ -20,6 +21,8 @@ const SongDetails = () => {
     error,
   } = useGetSongRelatedQuery({ songid });
 
+  console.log(data);
+  console.log(songData);
   const handlePauseClick = () => {
     dispatch(playPause(false));
   };
@@ -27,6 +30,11 @@ const SongDetails = () => {
     dispatch(setActiveSong({ song, data, i }));
     dispatch(playPause(true));
   };
+  // if (songData) {
+  //   const { data: artistData, isFetching: isFetchingArtistDetails } =
+  //     useGetArtistDetailsQuery(songData?.artists[0].id);
+  //   console.log(artistData);
+  // }
 
   if (isFetchingSongDetails || isFetchingRelatedSongs)
     return <Loader title="Searching song details" />;
@@ -37,7 +45,7 @@ const SongDetails = () => {
 
   return (
     <div className="flex flex-col">
-      {/* <DetailsHeader artistId={artistId} songData={songData} /> */}
+      <DetailsHeader songData={songData} />
 
       <div className="mb-10">
         <h2 className="text-white text-3xl font-bold"> Lyrics : </h2>
